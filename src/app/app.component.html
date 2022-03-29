@@ -1,0 +1,8 @@
+<div *ngIf="loading$ | async" id="loading">
+  <div id="loading-container">
+    <div class="spinner-border" role="status"></div>
+  </div>
+</div>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

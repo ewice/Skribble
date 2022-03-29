@@ -1,0 +1,16 @@
+<div id="message-list">
+  <div id="messages">
+    <ng-container *ngFor="let message of (messages$ | async); index as i">
+      <div *ngIf="message"
+           [ngClass]="i % 2 === 0 ? 'bg-turquoise-three' : 'bg-white'">
+        <app-message [message]="message"></app-message>
+      </div>
+    </ng-container>
+  </div>
+  <form class="m-2" [formGroup]="form" (submit)="onSubmit()" (keydown.enter)="onSubmit($event)">
+    <input type="text" class="col p-2" placeholder="Schreibe deine Vermutung hier..." formControlName="guess">
+    <button type="submit" class="btn-submit col-2 m-1 border-radius-10 bg-turquoise-two">
+      <fa-icon [icon]="faChevronRight"></fa-icon>
+    </button>
+  </form>
+</div>

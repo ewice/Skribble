@@ -1,0 +1,46 @@
+<div class="position-relative">
+  <button class="btn btn-secondary logout mt-3" (click)="logout()">
+    <fa-icon class="me-2" [icon]="faSignOutAlt"></fa-icon>
+    Abmelden
+  </button>
+  <div class="d-flex justify-content-center">
+    <div class="col-5 mt-6">
+      <div class="bg-white border-radius-10 p-4">
+        <div id="avatar" class="d-flex justify-content-center">
+          <img *ngIf="(currentUser$ | async) as currentUser" [src]="'https://p-frei.de' + currentUser.avatar.imagePath" [alt]="currentUser.avatar.name">
+        </div>
+        <div class="mt-4">
+          <form [formGroup]="form" (submit)="onSubmit()">
+            <div class="mb-2">
+              <label for="game-id" class="form-label fw-bold">GameID</label>
+              <input type="text" class="form-control" id="game-id" formControlName="gameId" required>
+            </div>
+            <button type="submit" class="btn btn-secondary w-100">Spiel beitreten</button>
+          </form>
+          <button class="btn btn-primary w-100 mt-3" (click)="createNewGame()">Neues Spiel erstellen</button>
+        </div>
+      </div>
+      <div class="bg-white border-radius-10 p-4 mt-3 mb-5">
+        <h2 class="fw-bold fs-5">Spielhistorie</h2>
+        <div class="game-statistics-table">
+          <div class="row head">
+            <p class="col">Spiel</p>
+            <p class="col">Punkte</p>
+            <p class="col">Platzierung</p>
+            <p class="col">Spieler</p>
+          </div>
+          <div class="games">
+            <div class="row"
+                 *ngFor="let gameStatistic of (gameStatistics$ | async); index as i"
+                 [ngClass]="i % 2 === 0 ? 'bg-turquoise-three' : 'bg-white'">
+              <p class="col">{{ gameStatistic.playerGameNumber }}</p>
+              <p class="col">{{ gameStatistic.score }}</p>
+              <p class="col">{{ gameStatistic.rank }}</p>
+              <p class="col">{{ gameStatistic.playersCount }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

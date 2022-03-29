@@ -1,0 +1,40 @@
+@import '/src/styles/variables';
+
+p, label {
+  color: $turquoise;
+}
+
+#avatar img {
+    width: 150px;
+}
+
+.logout {
+  display: flex;
+  right: 0;
+  position: absolute;
+  top: 0;
+  img {
+    height: 1.4rem;
+    margin-right: 0.5rem;
+  }
+}
+
+.game-statistics-table {
+  p {
+    color: $turquoise;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+
+  .games {
+    height: 15rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: 1px solid $turquoise;
+    border-radius: 10px;
+    p {
+      font-family: 'Mali', cursive;
+    }
+  }
+}

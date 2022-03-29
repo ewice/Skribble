@@ -1,0 +1,61 @@
+@import "src/styles/variables";
+
+.canvas {
+  height: 500px;
+}
+
+#drawing-board {
+  height: 400px;
+  width: 400px;
+}
+
+#selected-color {
+  border-radius: 10px;
+  height: 50px;
+  width: 50px;
+}
+
+#colors {
+  display: flex;
+  flex-wrap: wrap;
+  width: 275px;
+}
+
+.color {
+  height: 25px;
+  width: 25px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.tool {
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  width: 50px;
+
+  fa-icon {
+    color: black;
+  }
+
+  #circle5 {
+    font-size: 1rem;
+  }
+
+  #circle10 {
+    font-size: 1.5rem;
+  }
+
+  #circle20 {
+    font-size: 2rem;
+  }
+
+  #trash {
+    font-size: 1.8rem;
+  }
+}

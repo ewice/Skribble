@@ -1,0 +1,33 @@
+<div #container class="canvas bg-white border-radius-10 w-100">
+  <canvas #canvas></canvas>
+</div>
+<div *ngIf="isDrawer" class="my-3 d-flex justify-content-center">
+  <div
+    id="selected-color"
+    class="me-2"
+    [style.background-color]="strokeStyle"
+  ></div>
+  <div id="colors" class="me-2">
+    <div
+      *ngFor="let color of canvasStrokeStyle"
+      (click)="setStrokeStyle(color)"
+      class="color cursor-pointer"
+      [style.background-color]="color"
+    ></div>
+  </div>
+  <div id="tools" class="d-flex">
+    <div class="tool cursor-pointer me-1" (click)="setLineWidth(canvasLineWidth.KLEIN)">
+      <fa-icon id="circle5" [icon]="faCircle"></fa-icon>
+    </div>
+    <div class="tool cursor-pointer me-1" (click)="setLineWidth(canvasLineWidth.MITTEL)">
+      <fa-icon id="circle10" [icon]="faCircle"></fa-icon>
+    </div>
+    <div class="tool cursor-pointer me-2" (click)="setLineWidth(canvasLineWidth.GROSS)">
+      <fa-icon id="circle20" [icon]="faCircle"></fa-icon>
+    </div>
+    <div class="tool cursor-pointer" (click)="clearCanvas()">
+      <fa-icon id="trash" [icon]="faTrash"></fa-icon>
+    </div>
+  </div>
+  <div id="lineWidth"></div>
+</div>

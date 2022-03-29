@@ -1,0 +1,44 @@
+@import "variables";
+
+.btn-primary, .btn-secondary, .btn-tertiary {
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  padding: 0.4rem 1rem;
+}
+
+.btn-primary {
+  background-color: $yellow;
+  border: 3px $yellow solid;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $orange;
+    border-color: $yellow;
+  }
+}
+
+.btn-secondary {
+  background-color: $turquoise-two;
+  border: 3px $turquoise-two solid;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $turquoise;
+    border-color: $turquoise-two;
+  }
+}
+
+.btn-tertiary {
+  border: 3px white solid;
+  color: white;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: white;
+    color: $turquoise;
+  }
+}

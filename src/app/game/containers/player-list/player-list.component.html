@@ -1,0 +1,9 @@
+<div id="player-list">
+  <div
+    *ngFor="let player of (players | async); index as i"
+    class="player px-3 py-2"
+    [ngClass]="i % 2 === 0 ? 'bg-turquoise-three' : 'bg-white'"
+  >
+    <app-player [player]="player"></app-player>
+  </div>
+</div>

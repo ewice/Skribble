@@ -1,0 +1,27 @@
+<div class="position-relative">
+  <button class="btn btn-tertiary back mt-3" (click)="navigateHome()">
+    <fa-icon class="me-2" [icon]="faChevronLeft"></fa-icon>
+    Zurück
+  </button>
+  <div class="d-flex justify-content-center">
+    <div class="col-12 mt-6">
+      <div *ngIf="(gameEndedRanking$ | async) as gameEndedRanking" class="d-flex bg-white border-radius-10 p-4">
+        <div *ngFor="let rank of gameEndedRanking.resultRanking; index as i"
+             class="p-4"
+             [class.col-4]="i < 3"
+             [class.col-3]="i >= 3">
+          <div class="d-flex flex-column align-items-center">
+            <img [src]="'https://p-frei.de' + rank.gameUserDTO.avatar.imagePath" [alt]="rank.gameUserDTO.avatar.name">
+            <span class="fw-bold mt-2 fs-2"
+                  [class.color-gold]="rank.rank === 1"
+                  [class.color-silver]="rank.rank === 2"
+                  [class.color-bronze]="rank.rank === 3">
+              #{{ rank.rank }}
+            </span>
+            <span class="fw-bold">{{ rank.gameUserDTO.username }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

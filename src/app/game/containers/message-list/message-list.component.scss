@@ -1,0 +1,31 @@
+@import "src/styles/variables";
+
+#message-list {
+  background-color: $turquoise-three;
+  border-radius: 10px;
+  box-sizing: border-box;
+  height: 500px;
+  overflow: hidden;
+  width: 100%;
+}
+
+#messages {
+  height: 444px;
+}
+
+form {
+  background-color: white;
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  input {
+    border: none;
+    outline: 0;
+  }
+}
+
+.btn-submit {
+  background-color: $turquoise-two;
+  border: 0;
+  color: white;
+}

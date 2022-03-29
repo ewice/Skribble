@@ -1,0 +1,30 @@
+@import "src/styles/variables";
+
+#loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba($turquoise, 0.9);
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 10;
+
+  #loading-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 10px;
+    width: 400px;
+    height: 250px;
+
+    .spinner-border {
+      color: $turquoise;
+      height: 5rem;
+      width: 5rem;
+    }
+  }
+}

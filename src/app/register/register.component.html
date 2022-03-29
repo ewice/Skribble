@@ -1,0 +1,23 @@
+<div class="d-flex justify-content-center">
+  <div class="col-5 mt-6">
+    <div class="bg-white border-radius-10 p-4">
+      <h1 class="text-center fs-2 fw-bolder mb-5">Registrieren</h1>
+      <form [formGroup]="form" (submit)="onSubmit()">
+        <div class="mb-3">
+          <label for="username" class="form-label fw-bold">Benutzername</label>
+          <input type="text" class="form-control" id="username" formControlName="username" autocomplete="username"
+                 required>
+        </div>
+        <div class="mb-4">
+          <label for="password" class="form-label fw-bold">Passwort</label>
+          <input type="password" class="form-control" id="password" formControlName="newPassword"
+                 autocomplete="new-password" required>
+        </div>
+        <button type="submit" class="btn btn-secondary w-100">Registrieren</button>
+      </form>
+      <div class="text-center mt-4">
+        <a routerLink="/login">Zurück</a>
+      </div>
+    </div>
+  </div>
+</div>

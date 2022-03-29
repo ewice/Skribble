@@ -1,0 +1,40 @@
+<app-lobby *ngIf="!(gameStarted$ | async)"></app-lobby>
+<div *ngIf="(gameStarted$ | async) && !(gameEndedRanking$ | async)">
+  <div
+    class="d-flex bg-turquoise-three w-100 color-turquoise justify-content-between border-radius-10 px-3 py-2 mt-6 mb-3"
+  >
+    <p class="m-0 fs-3 fw-bold">Runde {{ currentRound$ | async }} von 3</p>
+    <p class="blank m-0 fs-3 fw-bold">
+      <ng-container *ngIf="(wordToDraw$ | async) as wordToDraw; else notDrawer">{{ wordToDraw }}</ng-container>
+      <ng-template #notDrawer>
+        <ng-container *ngFor="let character of (wordCharacters$ | async)">_</ng-container>
+      </ng-template>
+    </p>
+    <p class="timer m-0 fs-3 fw-bold">{{ timer$ | async }}s</p>
+  </div>
+  <div class="row">
+    <div class="col-3 d-flex flex-column justify-content-between h-500">
+      <app-player-list></app-player-list>
+    </div>
+    <div class="col position-relative">
+      <div class="round-statistic h-500" *ngIf="(roundStatistic$ | async) as roundStatistic">
+        <div class="position-relative w-100 h-100 d-flex flex-column align-items-center justify-content-center fs-4">
+          <p class="fw-bold m-0 color-yellow">Das Wort war: {{ roundStatistic.correctWord }}</p>
+          <p class="fw-bold color-yellow">Zeit ist abgelaufen!</p>
+          <div class="round-statistic-points">
+            <div class="row" *ngFor="let points of (roundStatistic?.roundPoints | keyvalue)">
+              <p class="col fw-bold">{{ points.key }}</p>
+              <p class="col-4 fw-bold color-green">+ {{ points.value }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="canvas-disable" class="w-100 h-500" *ngIf="!(wordToDraw$ | async)"></div>
+      <app-canvas></app-canvas>
+    </div>
+    <div class="col-3">
+      <app-message-list></app-message-list>
+    </div>
+  </div>
+</div>
+<app-game-ended-ranking *ngIf="!!(gameEndedRanking$ | async)"></app-game-ended-ranking>

@@ -1,0 +1,85 @@
+@import "styles/buttons";
+@import "styles/variables";
+@import "~bootstrap/dist/css/bootstrap.css";
+@import url('https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&display=swap');
+
+body {
+  background-color: $turquoise;
+}
+
+// Headlines
+h1, h2, h3 {
+  color: $turquoise;
+  font-family: 'Mali', cursive;
+}
+
+p, label, span {
+  color: $turquoise;
+  font-family: 'Quicksand', sans-serif;;
+}
+
+a {
+  color: $turquoise-three;
+  &:hover {
+    color: white;
+  }
+}
+
+// util
+.color-turquoise {
+  color: $turquoise !important;
+}
+
+.color-turquoise-three {
+  color: $turquoise-three !important;
+}
+
+.color-yellow {
+  color: $yellow !important;
+}
+
+.color-green {
+  color: $green !important;
+}
+
+.color-white {
+  color: white !important;
+}
+
+.bg-turquoise {
+  background-color: $turquoise;
+}
+
+.bg-turquoise-two {
+  background-color: $turquoise-two;
+}
+
+.bg-turquoise-three {
+  background-color: $turquoise-three;
+}
+
+.bg-yellow {
+  background-color: $yellow;
+}
+
+.bg-green {
+  background-color: $green;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.border-radius-10 {
+  border-radius: 10px;
+}
+
+// Forms
+.form-control {
+  border-radius: 10px;
+  border-color: $turquoise;
+}
+
+.mt-6 {
+  margin-top: 5rem !important;
+}

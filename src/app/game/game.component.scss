@@ -1,0 +1,41 @@
+@import '/src/styles/variables';
+
+p {
+  color: $turquoise;
+}
+
+.round-statistic {
+  background-color: rgba($turquoise, 0.7);
+  height: 100%;
+  left: 0;
+  padding: 0 0.75rem;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  p {
+    color: white;
+  }
+  .round-statistic-points {
+    width: 40%;
+  }
+}
+
+.blank {
+  letter-spacing: 0.4rem;
+}
+
+.timer {
+  text-align: right;
+  width: 4rem;
+}
+
+.h-500 {
+  height: 500px;
+}
+
+#canvas-disable {
+  position: absolute;
+  background-color: rgba(white, 0);
+  top: 0;
+  left: 0;
+}
